@@ -346,13 +346,13 @@ public class RWXml extends Thread {
 								}
 								//curreplaceable.setHeightOffset(0d);
 							}
-							if (notEmptyStr(curreplaceable.getDesiredBlueprintID()) && notEmptyStr(curreplaceable.getDesiredProvider()) && notEmptyStr(curreplaceable.getDesiredProduct())) {
+							if (notEmptyStr(curreplaceable.getTargetBlueprintID()) && notEmptyStr(curreplaceable.getTargetProvider()) && notEmptyStr(curreplaceable.getTargetProduct())) {
 								/*if (blueprintID.getTextContent().equals(curreplaceable.getCurrentBlueprintID()) && provider.getTextContent().equals(curreplaceable.getCurrentProvider()) && product.getTextContent().equals(curreplaceable.getCurrentProduct())) {
 
 					}*/
-								blueprintID.setTextContent(curreplaceable.getDesiredBlueprintID());
-								provider.setTextContent(curreplaceable.getDesiredProvider());
-								product.setTextContent(curreplaceable.getDesiredProduct());
+								blueprintID.setTextContent(curreplaceable.getTargetBlueprintID());
+								provider.setTextContent(curreplaceable.getTargetProvider());
+								product.setTextContent(curreplaceable.getTargetProduct());
 								modified=true;
 								//System.out.println("modified"+j);
 							}

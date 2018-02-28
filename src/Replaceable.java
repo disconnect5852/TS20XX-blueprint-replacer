@@ -9,9 +9,9 @@ public class Replaceable implements Serializable  {
 	private String currentProvider;
 	private String currentProduct;
 	private String currentBlueprintID;
-	private String desiredProvider;
-	private String desiredProduct;
-	private String desiredBlueprintID;
+	private String targetProvider;
+	private String targetProduct;
+	private String targetBlueprintID;
 	private double heightOffset;
 	public String getType() {
 		return type;
@@ -37,23 +37,23 @@ public class Replaceable implements Serializable  {
 	public void setCurrentBlueprintID(String currentBlueprinID) {
 		this.currentBlueprintID = currentBlueprinID;
 	}
-	public String getDesiredProvider() {
-		return desiredProvider;
+	public String getTargetProvider() {
+		return targetProvider;
 	}
-	public void setDesiredProvider(String desiredProvider) {
-		this.desiredProvider = desiredProvider;
+	public void setTargetProvider(String targetProvider) {
+		this.targetProvider = targetProvider;
 	}
-	public String getDesiredProduct() {
-		return desiredProduct;
+	public String getTargetProduct() {
+		return targetProduct;
 	}
-	public void setDesiredProduct(String desiredPproduct) {
-		this.desiredProduct = desiredPproduct;
+	public void setTargetProduct(String targetPproduct) {
+		this.targetProduct = targetPproduct;
 	}
-	public String getDesiredBlueprintID() {
-		return desiredBlueprintID;
+	public String getTargetBlueprintID() {
+		return targetBlueprintID;
 	}
-	public void setDesiredBlueprintID(String desiredBlueprinID) {
-		this.desiredBlueprintID = desiredBlueprinID;
+	public void setTargetBlueprintID(String targetBlueprinID) {
+		this.targetBlueprintID = targetBlueprinID;
 	}
 	
 	public double getHeightOffset() {
@@ -64,16 +64,16 @@ public class Replaceable implements Serializable  {
 	}
 	public Replaceable(String type, String currentProvider,
 			String currentPproduct, String currentBlueprinID,
-			String desiredProvider, String desiredPproduct,
-			String desiredBlueprinID, double heightOffset) {
+			String targetProvider, String targetPproduct,
+			String targetBlueprinID, double heightOffset) {
 		super();
 		this.type = type;
 		this.currentProvider = currentProvider;
 		this.currentProduct = currentPproduct;
 		this.currentBlueprintID = currentBlueprinID;
-		this.desiredProvider = desiredProvider;
-		this.desiredProduct = desiredPproduct;
-		this.desiredBlueprintID = desiredBlueprinID;
+		this.targetProvider = targetProvider;
+		this.targetProduct = targetPproduct;
+		this.targetBlueprintID = targetBlueprinID;
 		this.heightOffset=heightOffset;
 	}
 	
@@ -83,9 +83,9 @@ public class Replaceable implements Serializable  {
 		this.currentProvider = currentProvider;
 		this.currentProduct = currentPproduct;
 		this.currentBlueprintID = currentBlueprinID;
-		this.desiredProvider = null;
-		this.desiredProduct = null;
-		this.desiredBlueprintID = null;;
+		this.targetProvider = null;
+		this.targetProduct = null;
+		this.targetBlueprintID = null;;
 	}
 	
 	public Replaceable() {
@@ -105,12 +105,12 @@ public class Replaceable implements Serializable  {
 				+ ((currentProvider == null) ? 0 : currentProvider.hashCode());
 		result = prime
 				* result
-				+ ((desiredBlueprintID == null) ? 0 : desiredBlueprintID
+				+ ((targetBlueprintID == null) ? 0 : targetBlueprintID
 						.hashCode());
 		result = prime * result
-				+ ((desiredProduct == null) ? 0 : desiredProduct.hashCode());
+				+ ((targetProduct == null) ? 0 : targetProduct.hashCode());
 		result = prime * result
-				+ ((desiredProvider == null) ? 0 : desiredProvider.hashCode());
+				+ ((targetProvider == null) ? 0 : targetProvider.hashCode());
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		return result;
 	}
@@ -152,9 +152,9 @@ public class Replaceable implements Serializable  {
 				.append(", currentProvider=").append(currentProvider)
 				.append(", currentProduct=").append(currentProduct)
 				.append(", currentBlueprintID=").append(currentBlueprintID)
-				.append(", desiredProvider=").append(desiredProvider)
-				.append(", desiredProduct=").append(desiredProduct)
-				.append(", desiredBlueprintID=").append(desiredBlueprintID)
+				.append(", targetProvider=").append(targetProvider)
+				.append(", targetProduct=").append(targetProduct)
+				.append(", targetBlueprintID=").append(targetBlueprintID)
 				.append(", heightOffset=").append(heightOffset).append("]");
 		return builder.toString();
 	}

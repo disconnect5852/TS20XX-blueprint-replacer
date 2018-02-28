@@ -6,7 +6,7 @@ import javax.swing.table.AbstractTableModel;
 public class RWTableModel extends AbstractTableModel {
 	private static final long serialVersionUID = -162903277521189656L;
 	private List<Replaceable> list;
-	private static final String[] header={"Type", "Provider", "Product", "BlueprintID", "desiredProvider", "desiredProduct", "desiredBlueprintID", "heightOffset"};
+	private static final String[] header={"Type", "Provider", "Product", "BlueprintID", "targetProvider", "targetProduct", "targetBlueprintID", "heightOffset"};
 	
 
 	public RWTableModel(List<Replaceable> list) {
@@ -38,11 +38,11 @@ public class RWTableModel extends AbstractTableModel {
 	    case 3:
 	     return entity.getCurrentBlueprintID();
 	    case 4:
-	     return entity.getDesiredProvider();
+	     return entity.getTargetProvider();
 	    case 5:
-		 return entity.getDesiredProduct();
+		 return entity.getTargetProduct();
 	    case 6:
-		 return entity.getDesiredBlueprintID();
+		 return entity.getTargetBlueprintID();
 	    case 7:
 			 return entity.getHeightOffset();
 	    default :
@@ -69,13 +69,13 @@ public class RWTableModel extends AbstractTableModel {
 		Replaceable entity= list.get(row);
 	    switch (column) {
 	    case 4:
-	    	 entity.setDesiredProvider((String) aValue);
+	    	 entity.setTargetProvider((String) aValue);
 	    	 break;
 	    case 5:
-	    	 entity.setDesiredProduct((String) aValue);
+	    	 entity.setTargetProduct((String) aValue);
 	    	 break;
 	    case 6:
-	    	 entity.setDesiredBlueprintID((String) aValue);
+	    	 entity.setTargetBlueprintID((String) aValue);
 	    	 break;
 	    case 7:
 	    	try {
@@ -89,9 +89,9 @@ public class RWTableModel extends AbstractTableModel {
 	}
 	public void setValuesAtRow(String provider, String product, String blueprintID, int row) {
 		Replaceable entity= list.get(row);
-		entity.setDesiredProvider(provider);
-		entity.setDesiredProduct(product);
-		entity.setDesiredBlueprintID(blueprintID);
+		entity.setTargetProvider(provider);
+		entity.setTargetProduct(product);
+		entity.setTargetBlueprintID(blueprintID);
 		//list.set(row, entity);
 	}
 	public void clearData() {
