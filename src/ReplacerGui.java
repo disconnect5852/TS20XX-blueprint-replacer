@@ -460,9 +460,7 @@ public class ReplacerGui extends JFrame {
 							try {
 								RWXml xml= new RWXml(files[i].getAbsolutePath());
 								execSvc.execute(xml);
-								//xml.start();
 								if (xml!=null) {
-									//xml.populateReplaceables();
 									xmls.add(xml);
 								}
 							} catch (Exception e) {
@@ -470,12 +468,10 @@ public class ReplacerGui extends JFrame {
 								e.printStackTrace();
 								System.out.println("exception");
 							}
-							//progress.setValue(i+1);
 						}
 						execSvc.shutdown();
 						try {
 							while (!execSvc.awaitTermination(10, TimeUnit.MINUTES )) {
-								//System.out.println("sleep");
 								Thread.sleep(1000);
 
 							}
@@ -680,7 +676,7 @@ public class ReplacerGui extends JFrame {
 				}
 				ReplacerGui.this.setTitle(FRAMETEXT);
 			}
-			else JOptionPane.showMessageDialog(ReplacerGui.this, "The file/directory you've selected isn't exists. Please use Refresh Filetree option to refresh the tree contents!", "Problem?", JOptionPane.WARNING_MESSAGE);
+			else JOptionPane.showMessageDialog(ReplacerGui.this, "The file/directory you've selected isn't exists. Please use \"Refresh Filetree\" option to refresh the tree contents!", "Problem?", JOptionPane.WARNING_MESSAGE);
 		}
 	}
 	
